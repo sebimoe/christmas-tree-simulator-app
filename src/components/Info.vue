@@ -1,5 +1,5 @@
 <template>
-    <span class="Info">
+    <span class="Info" :class="{'Info--bottom': bottom}">
         <span class="Info__content" :title="info"><slot /></span>
         <span class="Info__icon" v-if="info">
             <span class="Info__info">{{info}}</span>
@@ -11,6 +11,7 @@
 export default {
     props: {
         info: String,
+        bottom: Boolean,
     }
 }
 </script>
@@ -33,11 +34,18 @@ export default {
         font-size: 0.85rem;
         background: white;
         color: black;
+        line-height: 1.4;
+        font-weight: bold;
 
         .dark-theme & {
             background: #222;
             color: #f0f0f0;
         }
+    }
+
+    &--bottom .Info__info {
+        bottom: auto;
+        top: 16px;
     }
 
     &__icon {

@@ -71,7 +71,9 @@
                 </Info>
             </div>
         </div>
-        <span></span>
+        <a class="GitHubIcon" href="https://github.com/sebimoe/christmas-tree-simulator-app" target="_blank"
+            ><img src="/GitHub-Mark-120px-plus.png" alt="GitHub Logo" class="dark-theme-only"
+            /><img src="/GitHub-Mark-Light-120px-plus.png" alt="GitHub Logo" class="light-theme-only" /></a>
     </div>
 </template>
 
@@ -198,7 +200,7 @@ export default {
 
 <style lang="scss" scoped>
 .ControlsBar {
-    padding: 1em;
+    padding: 1em 0;
     display: flex;
     justify-content: space-between;
 
@@ -224,11 +226,57 @@ button {
     min-height: 1.5rem;
     margin: 0.5rem;
 }
+
 .equal-columns {
     display: flex;
 
     > div {
         flex: 1;
+    }
+}
+
+.GitHubIcon {
+    display: inline-block;
+    padding: 0.5rem;
+    color: inherit;
+    align-self: center;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    transform: translateX(0);
+
+    &:hover, &:focus {
+        transform: translateX(-7rem);
+    }
+
+    &:after {
+        content: 'Browse on GitHub';
+        padding-left: 3.55rem;
+        padding-right: 0.5rem;
+        position: absolute;
+        left: 0;
+        right: -7rem;
+        top: 0;
+        bottom: 0;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        color: white;
+        background: black;
+
+        .dark-theme & {
+            color: black;
+            background: white;
+        }
+    }
+
+    img {
+        width: 2.5rem;
+        margin-bottom: 1px;
+        display: block;
     }
 }
 </style>

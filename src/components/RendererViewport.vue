@@ -140,7 +140,7 @@ export default {
 .RendererViewport {
     display: inline-block;
     min-width: 800px;
-    min-height: 600px;
+    min-height: 560px;
     position: relative;
 
     &:after {
