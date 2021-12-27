@@ -4,7 +4,9 @@ See [Matt Parker's video](https://www.youtube.com/watch?v=WuMRJf6B5Q4) for backg
 
 This app is intended for playback of Christmas tree light animations inspired by Matt Parker's video.
 
-## Visit Online: [christmas-tree-viewer.sebi.moe](https://christmas-tree-viewer.sebi.moe/)
+## Visit Online
+
+Hosted version available here: [🌍 christmas-tree-viewer.sebi.moe 🔗](https://christmas-tree-viewer.sebi.moe/)
 
 ## How to run locally
 
