@@ -105,7 +105,6 @@ export default {
     },
     methods: {
         updatePositions() {
-            console.log("Update geometry!");
             const buffer = [];
             if(this.pointCoordinates && this.pointCoordinates.length) {
                 let totalZ = 0;
@@ -123,8 +122,6 @@ export default {
         },
         updateCamera() {
             this.camera.position.set(...this.cameraPosition);
-            console.log("Update camera!");
-            // this.camera.updateProjectionMatrix();
         },
         renderFrame() {
             this.frameRequest = null;

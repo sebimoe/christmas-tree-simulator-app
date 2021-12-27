@@ -76,12 +76,11 @@
 </template>
 
 <script>
-// todo: package up and change path
 import {
     CoordinateDecoders,
     CoordinateMapping,
     CsvAnimationDecoder,
-} from '../../../christmas-tree-simulator';
+} from 'christmas-tree-simulator';
 
 export default {
     props: {

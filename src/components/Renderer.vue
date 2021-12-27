@@ -7,17 +7,11 @@
             :pointSize="Math.sqrt(viewportConfig.pointSize * viewportConfig.pointSize)"
             :pointStrength="viewportConfig.pointStrength"
             :maskTexture="viewportConfig.maskTexture"
-            />
-        <br />
+        />
     </div>
 </template>
 
 <script>
-// todo: package up and change path
-import {
-    ThreejsDotsRenderer,
-} from '../../../christmas-tree-simulator/src/renderer.js';
-
 export default {
     props: {
         simulator: Object,
@@ -66,7 +60,9 @@ export default {
             }
         },
         renderFrame() {
-            if(!this.simulator.coordinateMapping) return;
+            if(!this.simulator.coordinateMapping) {
+                return;
+            }
             
             if(this.simulator.clearGeometryDirty()) {
                 this.pointCoordinates = this.simulator.coordinateMapping.allCoords();
