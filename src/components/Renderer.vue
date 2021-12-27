@@ -19,7 +19,6 @@ export default {
     },
     data() {
         return {
-            renderer: null,
             mainLoopTimeout: null,
             lastTickDate: null,
             pointCoordinates: null,
@@ -28,21 +27,14 @@ export default {
         };
     },
     mounted() {
-        if(this.renderer === null) {
-            this.lastTickDate = new Date();
-            this.renderer = new ThreejsDotsRenderer({
-                canvas: this.$refs.rendererCanvas,
-            })
-            this.mainLoopTimeout = window.requestAnimationFrame(() => this.animationFrameCallback());
-        }
+        this.lastTickDate = new Date();
+        this.mainLoopTimeout = window.requestAnimationFrame(() => this.animationFrameCallback());
     },
     destroyed() {
-        this.renderer = null;
         window.cancelAnimationFrame(this.mainLoopTimeout);
     },
     methods: {
         animationFrameCallback() {
-            if(!this.renderer) throw 'renderer not present!';
             try {
                 const deltaTimeMs = new Date() - this.lastTickDate;
                 this.mainLoopTick(deltaTimeMs / 1000);
